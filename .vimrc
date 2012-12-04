@@ -194,4 +194,4 @@ set ofu=syntaxcomplete#Complete
 
 "Powerline stuff
 set t_Co=256
-"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
