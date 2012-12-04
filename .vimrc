@@ -178,8 +178,8 @@ set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
 "" Backup and swap files
-set backupdir=~/.vim/_backup//    " where to put backup files.
-set directory=~/.vim/_temp//      " where to put swap files.
+set backupdir=~/.vim/.tmp//    " where to put backup files.
+set directory=~/.vim/.tmp//    " where to put swap files.
 
 "" Wildmenu (tab command completion)
 set wildmenu
