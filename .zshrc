@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="pygmalion"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 COMPLETION_WAITING_DOTS="true"
 
@@ -40,4 +40,4 @@ export EDITOR='vim'
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-# source ~/fez-scripts/fez-scripts.bashrc
+source ~/fez-scripts/fez-scripts.bashrc
