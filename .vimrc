@@ -185,8 +185,13 @@ set directory=~/.vim/.tmp//    " where to put swap files.
 set wildmenu
 set wildmode=list:longest,full
 
-"Enable plguins
-filetype plugin on
+" Pathogen stuff
+call pathogen#infect()
+filetype plugin indent on
 
 "Set Omnifunction
 set ofu=syntaxcomplete#Complete
+
+"Powerline stuff
+set t_Co=256
+"let g:Powerline_symbols = 'fancy'
