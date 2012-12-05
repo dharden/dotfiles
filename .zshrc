@@ -15,7 +15,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Applications/MAMP/Library/bin/
+export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/Applications/MAMP/Library/bin/
 bindkey -v
 alias template_cache='rm -f /workspace/drupal/tmp/cache/remote_template/*'
 alias dp='cd ~/workspace/drupal'
