@@ -6,7 +6,7 @@ let mapleader = ","
 
 "Ever notice a slight lag after typing the leader key + command? This lowers
 "the timeout.
-set timeoutlen=500
+set timeoutlen=100
 
 "Switch between buffers without saving
 set hidden
@@ -159,7 +159,7 @@ syntax enable         " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8    " Set default encoding to UTF-8
 
 "" Whitespace
-set nowrap                        " don't wrap lines
+set wrap                          " wrap lines
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 
