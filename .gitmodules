@@ -13,3 +13,9 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/vim-livereload"]
+	path = .vim/bundle/vim-livereload
+	url = https://github.com/flomotlik/vim-livereload.git
+[submodule ".vim/bundle/ftl-vim-syntax"]
+	path = .vim/bundle/ftl-vim-syntax
+	url = https://github.com/natew/ftl-vim-syntax.git
