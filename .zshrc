@@ -11,7 +11,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git vi-mode dircycle brew archlinux npm nyan lol)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -45,3 +45,5 @@ source ~/fez-scripts/fez-scripts.bashrc
 # Bacward search in the shell history with <C-r>
 bindkey ^r  history-incremental-search-backward
 setopt hist_ignore_all_dups
+
+alias gsu='git pull --recurse-submodules && git submodule update --recursive'
