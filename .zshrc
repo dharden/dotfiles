@@ -41,3 +41,7 @@ export EDITOR='vim'
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 source ~/fez-scripts/fez-scripts.bashrc
+
+# Bacward search in the shell history with <C-r>
+bindkey ^r  history-incremental-search-backward
+setopt hist_ignore_all_dups

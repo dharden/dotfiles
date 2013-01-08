@@ -1,0 +1,12 @@
+# ~/.tmuxinator/epoch.yml
+# you can make as many tabs as you wish...
+
+project_name: Epoch
+project_root: ~/brontosaurus
+socket_name: epoch # Not needed.  Remove to use default socket
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - 
+  - hackathon: ssh hackathon@goepoch.com

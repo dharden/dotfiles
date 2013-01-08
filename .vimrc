@@ -198,3 +198,5 @@ let g:Powerline_symbols = 'fancy'
 
 "NERDTree stuff
 map <Leader>n :NERDTreeToggle<CR>
+
+let @p='wF$veyoecho "<b>:</b>"hhhhhi<pre>pF$i\A . __FILE__ . ":" . __LINE__ . "\n";oprint_r();hhpoexit;'
