@@ -48,7 +48,7 @@ setopt hist_ignore_all_dups
 
 alias gsu='git pull --recurse-submodules && git submodule update --recursive'
 
-alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 alias servethis="python -c 'import SimpleHTTPServer; SimpleHTTPServer.test()'"
 

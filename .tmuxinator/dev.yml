@@ -8,12 +8,12 @@ tabs:
       layout: main-vertical
       panes:
         - #empty
-        - cd sahara
+        - cd tater
         - cd drupal
   - server:
       layout: even-vertical
       panes:
-        - cd sahara && ruby ant.rb
+        - cd tot && mvn jetty:run
         - tail -f /Applications/MAMP/logs/php_error.log
         - tail -f /Applications/MAMP/logs/apache_error.log
   - AWS: ssh dev-drupal01.aws.zappos.com
