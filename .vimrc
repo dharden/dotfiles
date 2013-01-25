@@ -92,6 +92,8 @@ colorscheme solarized
 set background=light
 set mouse=a
 
+map <F5> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
 " Yank text to the OS X clipboard
 set clipboard=unnamed
 noremap <leader>y "+y

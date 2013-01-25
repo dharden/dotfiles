@@ -72,3 +72,12 @@ extract () {
     echo "'$1' is not a valid file"
   fi
 }
+
+alias please="sudo"
+
+# The colors, Duke, the colors!
+
+export GREP_COLOR='1;35'
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
