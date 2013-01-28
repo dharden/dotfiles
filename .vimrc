@@ -83,13 +83,10 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-" Scrollbar junk
-set guioptions=aAce
-
 " Colors and fonts
-let g:solarized_termtrans = 1
-colorscheme solarized
-set background=light
+" let g:solarized_termtrans = 1
+colorscheme molokai
+set background=dark
 set mouse=a
 
 map <F5> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
