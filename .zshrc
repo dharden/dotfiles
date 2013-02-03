@@ -81,3 +81,4 @@ export GREP_COLOR='1;35'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+git config --global color.ui true
