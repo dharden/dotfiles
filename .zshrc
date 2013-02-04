@@ -23,4 +23,4 @@ setopt hist_ignore_all_dups
 bindkey -v
 
 # various aliases and such
-source $HOME/dotfiles/.aliases
+source $HOME/dotfiles/aliases.sh
