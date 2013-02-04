@@ -51,11 +51,8 @@ set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 "Saves time; maps the spacebar to colon
 nmap <space> :
 
-"Map code completion to , + tab
-imap <leader><tab> <C-x><C-o>
-
 "Map word completion to leader + space
-imap <leader><space> <C-n>
+imap <leader><tab> <C-n>
 
 "http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 set completeopt=longest,menuone
@@ -64,9 +61,6 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
-"Map escape key to jj -- much faster
-imap jj <esc>
 
 "Bubble single lines (kicks butt)
 "http://vimcasts.org/episodes/bubbling-text/
@@ -84,11 +78,11 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " Colors and fonts
-" let g:solarized_termtrans = 1
 colorscheme molokai
 set background=dark
 set mouse=a
 
+" Switch background
 map <F5> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " Yank text to the OS X clipboard
@@ -97,7 +91,7 @@ noremap <leader>y "+y
 noremap <leader>yy "+yy
 
 " Preserve indentation while pasting text from the OS X clipboard
-noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
 
 " Stuff shamelessly stolen from Janus.
 
@@ -129,7 +123,6 @@ map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
-
 
 " Underline the current line with '='
 nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
@@ -198,4 +191,5 @@ let g:Powerline_symbols = 'fancy'
 "NERDTree stuff
 map <Leader>n :NERDTreeToggle<CR>
 
-let @p='wF$veyoecho "<b>:</b>"hhhhhi<pre>pF$i\A . __FILE__ . ":" . __LINE__ . "\n";oprint_r();hhpoexit;'
+" Clear last search
+nnoremap <CR> :noh<CR><CR>
