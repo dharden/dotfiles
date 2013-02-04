@@ -1,11 +1,8 @@
+#!/bin/bash
+
 export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/Applications/MAMP/Library/bin/
-bindkey -v
-alias template_cache='rm -f /workspace/drupal/tmp/cache/remote_template/*'
-alias dp='cd ~/workspace/drupal'
-alias dpthemes='cd ~/workspace/drupal/sites/all/themes'
-alias dpcontemplates='cd ~/workspace/drupal/sites/all/contemplates'
-alias dpmodules='cd ~/workspace/drupal/sites/all/modules'
-alias dpsites='cd ~/workspace/drupal/sites'
+
+test -f $HOME/dotfiles/.work && . $HOME/dotfiles/.work
 
 # Commit Current Branch
 function ccb {
@@ -23,11 +20,6 @@ export EDITOR='vim'
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-source ~/fez-scripts/fez-scripts.bashrc
-
-# Bacward search in the shell history with <C-r>
-bindkey ^r  history-incremental-search-backward
-setopt hist_ignore_all_dups
 
 alias gsu='git pull --recurse-submodules && git submodule update --recursive'
 
@@ -59,9 +51,7 @@ extract () {
 alias please="sudo"
 
 # The colors, Duke, the colors!
-
 export GREP_COLOR='1;35'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-
 git config --global color.ui true

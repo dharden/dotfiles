@@ -15,4 +15,12 @@ plugins=(git vi-mode dircycle brew archlinux npm nyan lol)
 
 source $ZSH/oh-my-zsh.sh
 
+# Backward search in the shell history with <C-r>
+bindkey ^r  history-incremental-search-backward
+setopt hist_ignore_all_dups
+
+# vi mode
+bindkey -v
+
+# various aliases and such
 source $HOME/dotfiles/.aliases
