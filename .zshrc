@@ -19,6 +19,10 @@ source $ZSH/oh-my-zsh.sh
 bindkey ^r  history-incremental-search-backward
 setopt hist_ignore_all_dups
 
+bindkey "^[[A" history-search-backward
+
+bindkey "^[[B" history-search-forward
+
 # vi mode
 bindkey -v
 

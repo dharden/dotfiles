@@ -193,3 +193,6 @@ map <Leader>n :NERDTreeToggle<CR>
 
 " Clear last search
 nnoremap <CR> :noh<CR><CR>
+
+" Load Drupal Coding Standards when checking PHP
+let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,tpl.php,module,inc,install,test,profile,theme"
