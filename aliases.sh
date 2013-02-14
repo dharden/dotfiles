@@ -20,7 +20,6 @@ export EDITOR='vim'
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-
 alias gsu='git pull --recurse-submodules && git submodule update --recursive'
 
 alias glog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -59,28 +58,25 @@ git config --global color.ui true
 # This is dumb and should only be done if I'm too lazy to compile my own vim on OSX. TODO: Remove this.
 # alias vim='mvim -v'
 
-
 # Adapted from http://stackoverflow.com/a/11400433
 function remove_submodule {
-  # Set pathdd_to_submodule var (no trailing slash):
-  path_to_submodule=${1}
-
-  # Delete the relevant line from the .gitmodules file:
-  git config -f .gitmodules --remove-section submodule.$path_to_submodule
-
-  # Delete the relevant section from .git/config
-  git config -f .git/config --remove-section submodule.$path_to_submodule
-
-  # Unstage and remove $path_to_submodule only from the index (to prevent losing information)
-  git rm --cached $path_to_submodule
-
-  # Track changes made to .gitmodules
-  git add .gitmodules
-
-  # Commit the superproject
-  git commit -m "Remove submodule submodule_name"
-
-  # Delete the now untracked submodule files
-  rm -rf $path_to_submodule
-  rm -rf .git/modules/$path_to_submodule
+  if [ -d $1 ] ; then
+    # Set pathdd_to_submodule var (no trailing slash):
+    path_to_submodule=${1}
+    # Delete the relevant line from the .gitmodules file:
+    git config -f .gitmodules --remove-section submodule.$path_to_submodule
+    # Delete the relevant section from .git/config
+    git config -f .git/config --remove-section submodule.$path_to_submodule
+    # Unstage and remove $path_to_submodule only from the index (to prevent losing information)
+    git rm --cached $path_to_submodule
+    # Track changes made to .gitmodules
+    git add .gitmodules
+    # Commit the superproject
+    git commit -m "Remove submodule submodule_name"
+    # Delete the now untracked submodule files
+    rm -rf $path_to_submodule
+    rm -rf .git/modules/$path_to_submodule
+  else
+    echo "'$1' is not a valid directory"
+  fi
 }
