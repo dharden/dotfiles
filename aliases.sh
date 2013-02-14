@@ -56,4 +56,31 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 git config --global color.ui true
 
-alias vim='mvim -v'
+# This is dumb and should only be done if I'm too lazy to compile my own vim on OSX. TODO: Remove this.
+# alias vim='mvim -v'
+
+
+# Adapted from http://stackoverflow.com/a/11400433
+function remove_submodule {
+  # Set pathdd_to_submodule var (no trailing slash):
+  path_to_submodule=${1}
+
+  # Delete the relevant line from the .gitmodules file:
+  git config -f .gitmodules --remove-section submodule.$path_to_submodule
+
+  # Delete the relevant section from .git/config
+  git config -f .git/config --remove-section submodule.$path_to_submodule
+
+  # Unstage and remove $path_to_submodule only from the index (to prevent losing information)
+  git rm --cached $path_to_submodule
+
+  # Track changes made to .gitmodules
+  git add .gitmodules
+
+  # Commit the superproject
+  git commit -m "Remove submodule submodule_name"
+
+  # Delete the now untracked submodule files
+  rm -rf $path_to_submodule
+  rm -rf .git/modules/$path_to_submodule
+}
