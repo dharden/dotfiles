@@ -6,14 +6,14 @@ test -f $HOME/dotfiles/.work && . $HOME/dotfiles/.work
 
 # Commit Current Branch
 function ccb {
-head=$(git rev-parse --abbrev-ref HEAD)
-message="$head $1"
-git commit -m "$message"
-git log -1 --format="%H" | pbcopy
+  head=$(git rev-parse --abbrev-ref HEAD)
+  message="$head $1"
+  git commit -m "$message"
+  git log -1 --format="%H" | pbcopy
 }
 
 function sshkeyify {
-cat ~/.ssh/id_rsa.pub | ssh $1  "mkdir ~/.ssh; cat >> ~/.ssh/authorized_keys"
+  cat ~/.ssh/id_rsa.pub | ssh $1  "mkdir ~/.ssh; cat >> ~/.ssh/authorized_keys"
 }
 
 export EDITOR='vim'
@@ -59,6 +59,7 @@ git config --global color.ui true
 # alias vim='mvim -v'
 
 # Adapted from http://stackoverflow.com/a/11400433
+# TODO: Do some of this logic: https://github.com/kollerma/git-submodule-tools/blob/master/git-rm-submodule
 function remove_submodule {
   if [ -d $1 ] ; then
     # Set pathdd_to_submodule var (no trailing slash):
