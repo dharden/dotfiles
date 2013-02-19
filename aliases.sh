@@ -56,7 +56,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 git config --global color.ui true
 
 # This is dumb and should only be done if I'm too lazy to compile my own vim on OSX. TODO: Remove this.
-# alias vim='mvim -v'
+alias vim='mvim -v'
 
 # Adapted from http://stackoverflow.com/a/11400433
 # TODO: Do some of this logic: https://github.com/kollerma/git-submodule-tools/blob/master/git-rm-submodule
