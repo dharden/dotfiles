@@ -6,7 +6,7 @@ let mapleader = ","
 
 "Ever notice a slight lag after typing the leader key + command? This lowers
 "the timeout.
-set timeoutlen=100
+set timeoutlen=500
 
 "Switch between buffers without saving
 set hidden
@@ -38,9 +38,6 @@ set foldenable
 
 "Hide mouse when typing
 set mousehide
-
-"Shortcut to fold tags with leader (usually \) + ft
-nnoremap <leader>ft zfat
 
 "Opens a vertical split and switches over (\v)
 nnoremap <leader>v <C-w>v<C-w>l
@@ -179,6 +176,7 @@ set wildmode=list:longest,full
 
 " Pathogen stuff
 call pathogen#infect()
+call pathogen#helptags()
 filetype plugin indent on
 
 "Set Omnifunction
@@ -196,3 +194,7 @@ nnoremap <CR> :noh<CR><CR>
 
 " Load Drupal Coding Standards when checking PHP
 let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,tpl.php,module,inc,install,test,profile,theme"
+
+" CtrlP Stuff - see http://statico.github.com/vim.html
+:nmap ; :CtrlPBuffer<CR>
+:let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
