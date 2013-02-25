@@ -2,7 +2,7 @@
 
 export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/Applications/MAMP/Library/bin/
 
-test -f $HOME/dotfiles/.work && . $HOME/dotfiles/.work
+test -f $HOME/.work && . $HOME/dotfiles/work.sh
 
 # Commit Current Branch
 function ccb {
