@@ -174,3 +174,5 @@ let g:ctrlp_prompt_mappings = {
   \ 'ToggleType(1)':        ['<c-f>'],
   \ 'ToggleType(-1)':       ['<c-b>']
   \ }
+
+autocmd FileType php set keywordprg=~/.vim/php_doc
