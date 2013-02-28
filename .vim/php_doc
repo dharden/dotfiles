@@ -2,6 +2,8 @@
 
 # Online help for PHP stuff in vim.
 
+# Needs cURL.
+
 # This is some hacky shit, but eh.
 # I don't care enough right now to optimize this.
 # TODO: Care enough?
@@ -11,6 +13,8 @@ PHP=http://www.php.net/
 DRUPAL=http://api.drupal.org/api/drupal/7/search/
 GOOGLE=http://www.google.com/search?as_q=php%20
 SEARCHTERM=$1
+# You should also set an environment variable named BROWSER to your
+# browser, e.g. chrome
 
 function GetHTTPCode {
   # Gets back the HTTP response code.
@@ -26,16 +30,16 @@ function main {
   # If it's a good URL, awesome, it's on PHP.net.
   if [ $HTTP_STATUS_PHP -eq 200 ];
   then
-    open $PHP$SEARCHTERM
+    $BROWSER "$PHP$SEARCHTERM"
     exit
   # If we're redirecting from the search page, it's on drupal.org.
   elif [ $HTTP_STATUS_DRUPAL -eq 302 ];
   then
-    open $DRUPAL$SEARCHTERM
+    $BROWSER "$DRUPAL$SEARCHTERM"
     exit
   # Fuck it, let's just Google it.
   else
-    open $GOOGLE$SEARCHTERM
+    $BROWSER "$GOOGLE$SEARCHTERM"
     exit
   fi
 }
