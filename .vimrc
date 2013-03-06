@@ -58,6 +58,7 @@ set autoindent
 
 "Always show the status line
 set laststatus=2
+set noshowmode
 
 "Prefer a slightly higher line height
 set linespace=3
