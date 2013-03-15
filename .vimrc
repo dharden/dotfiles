@@ -86,11 +86,11 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 "Bubble single lines (kicks butt)
 "http://vimcasts.org/episodes/bubbling-text/
 nmap <C-w> ddkP
-nmap <C-d> ddp
+nmap <S-w> ddp
 
 "Bubble multiple lines
 vmap <C-w> xkP`[V`]
-vmap <C-d> xp`[V`]
+vmap <S-w> xp`[V`]
 
 " easier window navigation
 nmap <C-h> <C-w>h

@@ -84,3 +84,8 @@ function remove_submodule {
 }
 
 alias ll="ls -al"
+
+
+function lt() { ls -ltrsa "$@" | tail; }
+function psgrep() { ps aux | grep -v grep | grep "$@" -i --color=auto; }
+function fname() { find . -iname "*$@*"; }
