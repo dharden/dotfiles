@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/Applications/MAMP/Library/bin/
+export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin
 
 test -f $HOME/.work && . $HOME/dotfiles/env/work.sh
 test -f $HOME/.cygwin && . $HOME/dotfiles/env/cygwin.sh
