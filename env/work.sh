@@ -15,3 +15,4 @@ export PATH=/Applications/MAMP/Library/bin/:/Users/dharden/.rbenv/versions/1.9.3
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
 source ~/.secrets
 eval "$(rbenv init -)"
+alias ls='ls -G'
