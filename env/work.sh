@@ -16,3 +16,4 @@ export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
 source ~/.secrets
 eval "$(rbenv init -)"
 alias ls='ls -G'
+alias zfcdebug="curl -I -H 'X-ZFC-debug:true'"
