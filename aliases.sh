@@ -90,3 +90,19 @@ function lt() { ls -ltrsa "$@" | tail; }
 function psgrep() { ps aux | grep -v grep | grep "$@" -i --color=auto; }
 function fname() { find . -iname "*$@*"; }
 alias yolo='git commit -am "DEAL WITH IT" && git push -f origin master'
+
+ff() {
+  find . \! \( -type d \) -iname "*$1*"
+}
+
+fstr() {
+  find . -type f -exec grep --color=auto -He "$1" {} \;
+}
+
+fstro() {
+  vim -p $(find . -type f -exec grep --color=auto -lHe "$1" {} \;) -c "tabdo /$1"
+}
+weather() {
+  curl -s "http://api.wunderground.com/auto/wui/geo/forecastxml/index.xml?query=${@:-10022}" | perl -ne '/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&print $1,"\n"';
+}
+
