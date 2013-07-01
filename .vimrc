@@ -7,7 +7,6 @@ set nocompatible      " Use vim, no vi defaults
 set number            " Show line numbers
 set ruler             " Show line and column number
 set encoding=utf-8    " Set default encoding to UTF-8
-colorscheme molokai   " Sets color scheme
 set background=dark   " Sets background color
 set mouse=a           " Enables mouse
 syntax enable         " Turn on syntax highlighting allowing local overrides
@@ -146,13 +145,33 @@ map <Up> gk
 " Adjust viewports to the same size
 map <Leader>= <C-w>=
 
-" Pathogen stuff
-call pathogen#infect()
-call pathogen#helptags()
-filetype plugin indent on
-
 "Set Omnifunction
 set ofu=syntaxcomplete#Complete
+
+" We Vundlin'
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tomasr/molokai'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'kien/ctrlp.vim'
+Bundle 'natew/ftl-vim-syntax'
+Bundle 'juvenn/mustache.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'skammer/vim-css-color'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-rails.git'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'closetag.vim'
+filetype plugin indent on
+
+" Plugin stuff below here:
+
+" The colors, Duke, the colors
+colorscheme molokai
 
 "Powerline stuff
 set t_Co=256
