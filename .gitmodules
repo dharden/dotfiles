@@ -16,9 +16,6 @@
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule ".vim/bundle/mustache.vim"]
-	path = .vim/bundle/mustache.vim
-	url = git://github.com/juvenn/mustache.vim.git
 [submodule ".vim/bundle/vim-css-color"]
 	path = .vim/bundle/vim-css-color
 	url = https://github.com/skammer/vim-css-color.git
