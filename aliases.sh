@@ -4,6 +4,7 @@ export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin
 
 test -f $HOME/.work && . $HOME/dotfiles/env/work.sh
 test -f $HOME/.cygwin && . $HOME/dotfiles/env/cygwin.sh
+test -f $HOME/.home && . $HOME/dotfiles/env/home.sh
 
 # Commit Current Branch
 function ccb {
@@ -106,3 +107,4 @@ weather() {
   curl -s "http://api.wunderground.com/auto/wui/geo/forecastxml/index.xml?query=${@:-10022}" | perl -ne '/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&print $1,"\n"';
 }
 
+alias ls='ls -G'

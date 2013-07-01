@@ -17,6 +17,5 @@ export PATH=/Applications/MAMP/Library/bin/:/Users/dharden/.rbenv/bin:/Users/dha
 launchctl setenv ANT_OPTS "$ANT_OPTS"
 source ~/.secrets
 eval "$(rbenv init -)"
-alias ls='ls -G'
 alias zfcdebug="curl -I -H 'X-ZFC-debug:true'"
 source ~/fez-scripts/fez-scripts.bashrc
