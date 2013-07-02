@@ -74,14 +74,6 @@ set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 "Saves time; maps the spacebar to colon
 nmap <space> :
 
-"http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
 "Bubble single lines (kicks butt)
 "http://vimcasts.org/episodes/bubbling-text/
 nmap <C-w> ddkP
@@ -124,14 +116,6 @@ nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 nmap <leader>u mQviwU`Q
 nmap <leader>l mQviwu`Q
 
-" Some helpers to edit mode
-" http://vimcasts.org/e/14
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
-
 " Underline the current line with '='
 nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
 
@@ -144,9 +128,6 @@ map <Up> gk
 
 " Adjust viewports to the same size
 map <Leader>= <C-w>=
-
-"Set Omnifunction
-set ofu=syntaxcomplete#Complete
 
 " Clear last search
 nnoremap <CR> :noh<CR><CR>
@@ -188,7 +169,6 @@ map <Leader>n :NERDTreeToggle<CR>
 let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,tpl.php,module,inc,install,test,profile,theme"
 
 " CtrlP Stuff - see http://statico.github.com/vim.html
-:nmap ; :CtrlPBuffer<CR>
 :let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
 
 let g:ctrlp_prompt_mappings = {
