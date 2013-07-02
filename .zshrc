@@ -28,3 +28,5 @@ bindkey -v
 
 # various aliases and such
 source $HOME/dotfiles/aliases.sh
+
+# source ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh

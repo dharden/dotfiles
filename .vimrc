@@ -146,11 +146,12 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'skammer/vim-css-color'
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-rails.git'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'closetag.vim'
 Bundle 'godlygeek/csapprox'
+Bundle 'Lokaltog/powerline'
 filetype plugin indent on
 
 " Plugin stuff below here:
@@ -177,3 +178,5 @@ let g:ctrlp_prompt_mappings = {
   \ }
 
 autocmd FileType php set keywordprg=~/.vim/php_doc
+
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
