@@ -12,7 +12,7 @@ set mouse=a           " Enables mouse
 syntax enable         " Turn on syntax highlighting allowing local overrides
 
 "" Whitespace
-set wrap                          " wrap lines
+set nowrap                        " don't wrap lines
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 
@@ -148,6 +148,9 @@ map <Leader>= <C-w>=
 "Set Omnifunction
 set ofu=syntaxcomplete#Complete
 
+" Clear last search
+nnoremap <CR> :noh<CR><CR>
+
 " We Vundlin'
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -166,6 +169,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-rails.git'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'closetag.vim'
+Bundle 'godlygeek/csapprox'
 filetype plugin indent on
 
 " Plugin stuff below here:
@@ -179,9 +183,6 @@ let g:Powerline_symbols = 'fancy'
 
 "NERDTree stuff
 map <Leader>n :NERDTreeToggle<CR>
-
-" Clear last search
-nnoremap <CR> :noh<CR><CR>
 
 " Load Drupal Coding Standards when checking PHP
 let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,tpl.php,module,inc,install,test,profile,theme"
