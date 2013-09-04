@@ -152,6 +152,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'closetag.vim'
 Bundle 'godlygeek/csapprox'
 Bundle 'Lokaltog/powerline'
+Bundle 'MatchTag'
 filetype plugin indent on
 
 " Plugin stuff below here:
