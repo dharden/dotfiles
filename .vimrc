@@ -4,7 +4,8 @@
 
 "" Basic Setup
 set nocompatible      " Use vim, no vi defaults
-set number            " Show line numbers
+set relativenumber    " Show relative line numbers
+set number            " Show line numbers (both set for hybrid mode)
 set ruler             " Show line and column number
 set encoding=utf-8    " Set default encoding to UTF-8
 set background=dark   " Sets background color

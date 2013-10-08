@@ -89,7 +89,7 @@ function psgrep() { ps aux | grep -v grep | grep "$@" -i --color=auto; }
 
 function fname() { find . -iname "*$@*"; }
 
-alias yolo='git commit -am "DEAL WITH IT" && git push -f origin master'
+alias yolo='git commit -am "DEAL WITH IT" && git push -f origin master && open http://31.media.tumblr.com/tumblr_m1hnnbSunI1qf5re0o1_400.gif'
 
 ff() {
   find . \! \( -type d \) -iname "*$1*"
