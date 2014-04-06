@@ -5,6 +5,7 @@ export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin
 test -f $HOME/.work && . $HOME/dotfiles/env/work.sh
 test -f $HOME/.cygwin && . $HOME/dotfiles/env/cygwin.sh
 test -f $HOME/.home && . $HOME/dotfiles/env/home.sh
+test -f $HOME/.ubuntu && . $HOME/dotfiles/env/ubuntu.sh
 
 # Commit Current Branch
 function ccb {
@@ -55,6 +56,18 @@ alias please="sudo"
 export GREP_COLOR='1;35'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
 git config --global color.ui true
 
 # Adapted from http://stackoverflow.com/a/11400433
@@ -106,5 +119,4 @@ weather() {
   curl -s "http://api.wunderground.com/auto/wui/geo/forecastxml/index.xml?query=${@:-10022}" | perl -ne '/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&print $1,"\n"';
 }
 
-alias ls='ls -G'
 alias tmux='tmux -2'

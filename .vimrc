@@ -99,8 +99,10 @@ noremap <leader>yy "+yy
 noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
 
 "" Backup and swap files
-set backupdir=~/.vim/.tmp//    " where to put backup files.
-set directory=~/.vim/.tmp//    " where to put swap files.
+"set backupdir=""   " where to put backup files.
+"set directory=""   " where to put swap files.
+set noswapfile
+set nobackup
 
 "" Wildmenu (tab command completion)
 set wildmenu
@@ -140,7 +142,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tomasr/molokai'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'natew/ftl-vim-syntax'
 Bundle 'juvenn/mustache.vim'
@@ -152,7 +154,7 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'closetag.vim'
 Bundle 'godlygeek/csapprox'
-Bundle 'Lokaltog/powerline'
+"Bundle 'Lokaltog/powerline'
 Bundle 'MatchTag'
 filetype plugin indent on
 
