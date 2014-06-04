@@ -1,23 +1,20 @@
-"Some things shamelessly stolen from Janus.
+"General Mappings (Normal, Visual, Operator-pending)
 
-"" General Mappings (Normal, Visual, Operator-pending)
+"Basic Setup
+set nocompatible       " Use vim, no vi defaults
+set relativenumber     " Show relative line numbers
+set number             " Show line numbers (both set for hybrid mode)
+set ruler              " Show line and column number
+set encoding=utf-8     " Set default encoding to UTF-8
+set mouse=a            " Enables mouse
+syntax enable          " Turn on syntax highlighting allowing local overrides
 
-"" Basic Setup
-set nocompatible      " Use vim, no vi defaults
-set relativenumber    " Show relative line numbers
-set number            " Show line numbers (both set for hybrid mode)
-set ruler             " Show line and column number
-set encoding=utf-8    " Set default encoding to UTF-8
-set background=dark   " Sets background color
-set mouse=a           " Enables mouse
-syntax enable         " Turn on syntax highlighting allowing local overrides
-
-"" Whitespace
+"Whitespace
 set nowrap                        " don't wrap lines
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 
-" List chars
+"List chars
 set listchars=""                  " Reset the listchars
 set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
 set listchars+=trail:.            " show trailing spaces as dots
@@ -25,7 +22,7 @@ set listchars+=extends:>          " The character to show in the last column whe
                                   " off and the line continues beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the last column when wrap is
 
-"" Searching
+" Searching
 set hlsearch    " highlight matches
 set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
@@ -33,9 +30,6 @@ set smartcase   " ... unless they contain at least one capital letter
 
 "Write the old file out when switching between files.
 set autowrite
-
-"Want a different map leader than \
-let mapleader = ","
 
 "Switch between buffers without saving
 set hidden
@@ -72,9 +66,6 @@ set mousehide
 "Session settings
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 
-"Saves time; maps the spacebar to colon
-nmap <space> :
-
 "Bubble single lines (kicks butt)
 "http://vimcasts.org/episodes/bubbling-text/
 nmap <C-w> ddkP
@@ -84,19 +75,10 @@ nmap <S-w> ddp
 vmap <C-w> xkP`[V`]
 vmap <S-w> xp`[V`]
 
-" easier window navigation
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-
 " Yank text to the OS X clipboard
 set clipboard=unnamed
 noremap <leader>y "+y
 noremap <leader>yy "+yy
-
-" Preserve indentation while pasting text from the OS X clipboard
-noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
 
 "" Backup and swap files
 "set backupdir=""   " where to put backup files.
@@ -109,7 +91,6 @@ set wildmenu
 set wildmode=list:longest,full
 
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
-" (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
 
 " Toggle paste mode
@@ -129,9 +110,6 @@ nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 map <Down> gj
 map <Up> gk
 
-" Adjust viewports to the same size
-map <Leader>= <C-w>=
-
 " Clear last search
 nnoremap <CR> :noh<CR><CR>
 
@@ -142,19 +120,16 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tomasr/molokai'
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'natew/ftl-vim-syntax'
 Bundle 'juvenn/mustache.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'skammer/vim-css-color'
-"Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-rails.git'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'closetag.vim'
 Bundle 'godlygeek/csapprox'
-"Bundle 'Lokaltog/powerline'
 Bundle 'MatchTag'
 filetype plugin indent on
 
@@ -162,24 +137,13 @@ filetype plugin indent on
 
 " The colors, Duke, the colors
 colorscheme molokai
-
-"Powerline stuff
 set t_Co=256
-let g:Powerline_symbols = 'fancy'
-if ! has('gui_running')
-  set ttimeoutlen=10
-  augroup FastEscape
-    autocmd!
-    au InsertEnter * set timeoutlen=0
-    au InsertLeave * set timeoutlen=1000
-  augroup END
-endif
+
+" No background color
+hi Normal ctermbg=NONE
 
 "NERDTree stuff
 map <Leader>n :NERDTreeToggle<CR>
-
-" Load Drupal Coding Standards when checking PHP
-let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,tpl.php,module,inc,install,test,profile,theme"
 
 " CtrlP Stuff - see http://statico.github.com/vim.html
 :let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
@@ -188,7 +152,3 @@ let g:ctrlp_prompt_mappings = {
   \ 'ToggleType(1)':        ['<c-f>'],
   \ 'ToggleType(-1)':       ['<c-b>']
   \ }
-
-autocmd FileType php set keywordprg=~/.vim/php_doc
-
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
