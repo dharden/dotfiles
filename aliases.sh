@@ -120,3 +120,11 @@ weather() {
 }
 
 alias tmux='tmux -2'
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+alias hs='history | grep --color=auto'
+
+alias tm='ps -ef | grep'
+
+alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'

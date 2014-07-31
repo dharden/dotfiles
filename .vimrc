@@ -118,7 +118,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
 Bundle 'tomasr/molokai'
 Bundle 'kien/ctrlp.vim'
 Bundle 'natew/ftl-vim-syntax'
@@ -126,11 +125,13 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'skammer/vim-css-color'
-Bundle 'tpope/vim-rails.git'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'closetag.vim'
 Bundle 'godlygeek/csapprox'
 Bundle 'MatchTag'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'elzr/vim-json'
+
 filetype plugin indent on
 
 " Plugin stuff below here:
