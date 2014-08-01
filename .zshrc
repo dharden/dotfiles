@@ -8,9 +8,6 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="pygmalion"
 
-# Uncomment following line if you want to disable autosetting terminal title.
-DISABLE_AUTO_TITLE="true"
-
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -33,5 +30,3 @@ bindkey -v
 
 # various aliases and such
 source $HOME/dotfiles/aliases.sh
-
-# source ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
