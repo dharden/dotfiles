@@ -1,3 +1,8 @@
+source /apollo/env/envImprovement/var/zshrc
+#Adding Eclipse bin to $PATH
+export PATH=/apollo/env/eclipse-3.7/bin:$PATH
+export EDITOR=vim
+export P4EDITOR=vim
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
