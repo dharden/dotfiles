@@ -131,6 +131,7 @@ Bundle 'godlygeek/csapprox'
 Bundle 'MatchTag'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'elzr/vim-json'
+Bundle 'wikitopian/hardmode'
 
 filetype plugin indent on
 
@@ -153,3 +154,8 @@ let g:ctrlp_prompt_mappings = {
   \ 'ToggleType(1)':        ['<c-f>'],
   \ 'ToggleType(-1)':       ['<c-b>']
   \ }
+
+" HARD MODE
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
