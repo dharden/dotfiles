@@ -2,7 +2,6 @@
 
 "Basic Setup
 set nocompatible       " Use vim, no vi defaults
-set relativenumber     " Show relative line numbers
 set number             " Show line numbers (both set for hybrid mode)
 set ruler              " Show line and column number
 set encoding=utf-8     " Set default encoding to UTF-8
@@ -42,9 +41,6 @@ set expandtab
 
 "Show command in bottom right portion of the screen
 set showcmd
-
-"Show line numbers
-set number
 
 "Indent stuff
 set smartindent
@@ -119,14 +115,13 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tomasr/molokai'
-Bundle 'kien/ctrlp.vim'
+" Bundle 'kien/ctrlp.vim'
 Bundle 'natew/ftl-vim-syntax'
 Bundle 'juvenn/mustache.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'skammer/vim-css-color'
 Bundle 'flazz/vim-colorschemes'
-Bundle 'closetag.vim'
 Bundle 'godlygeek/csapprox'
 Bundle 'MatchTag'
 Bundle 'airblade/vim-gitgutter'
@@ -156,6 +151,4 @@ let g:ctrlp_prompt_mappings = {
   \ }
 
 " HARD MODE
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
-
