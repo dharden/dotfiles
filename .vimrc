@@ -115,7 +115,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tomasr/molokai'
-" Bundle 'kien/ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 Bundle 'natew/ftl-vim-syntax'
 Bundle 'juvenn/mustache.vim'
 Bundle 'scrooloose/nerdtree'
@@ -127,6 +127,7 @@ Bundle 'MatchTag'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'elzr/vim-json'
 Bundle 'wikitopian/hardmode'
+Bundle 'mkitt/tabline.vim'
 
 filetype plugin indent on
 
@@ -137,7 +138,7 @@ colorscheme molokai
 set t_Co=256
 
 " No background color
-hi Normal ctermbg=NONE
+" hi Normal ctermbg=NONE
 
 "NERDTree stuff
 map <Leader>n :NERDTreeToggle<CR>
