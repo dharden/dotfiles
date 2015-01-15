@@ -138,3 +138,6 @@ let g:ctrlp_prompt_mappings = {
 
 " HARD MODE
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" Syntax Stuff
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
