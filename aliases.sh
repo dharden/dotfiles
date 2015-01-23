@@ -128,3 +128,10 @@ alias hs='history | grep --color=auto'
 alias tm='ps -ef | grep'
 
 alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+
+function b() {
+    cd ./$(git rev-parse --show-cdup)
+    if [ $# = 1 ]; then
+        cd $1
+    fi
+}

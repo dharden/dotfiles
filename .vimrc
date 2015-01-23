@@ -54,6 +54,10 @@ set mousehide
 " Session settings
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 
+" Spellcheck
+set spell " protip: ]s z= zg
+set spellfile=~/.vim/spell/en.utf-8.add
+
 " Yank text to the OS X clipboard
 set clipboard=unnamed
 noremap <leader>y "+y
