@@ -2,24 +2,20 @@
 
 export PATH=$PATH:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin
 
+test -f $HOME/.rhel && . $HOME/dotfiles/env/rhel.sh
 test -f $HOME/.work && . $HOME/dotfiles/env/work.sh
 test -f $HOME/.cygwin && . $HOME/dotfiles/env/cygwin.sh
 test -f $HOME/.home && . $HOME/dotfiles/env/home.sh
 test -f $HOME/.ubuntu && . $HOME/dotfiles/env/ubuntu.sh
-
-# Commit Current Branch
-function ccb {
-  head=$(git rev-parse --abbrev-ref HEAD)
-  message="$head $1"
-  git commit -m "$message"
-  git log -1 --format="%H" | pbcopy
-}
 
 function sshkeyify {
   cat ~/.ssh/id_rsa.pub | ssh $1  "mkdir ~/.ssh; cat >> ~/.ssh/authorized_keys"
 }
 
 export EDITOR='vim'
+
+# vi mode
+bindkey -v
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
@@ -96,8 +92,6 @@ function remove_submodule {
 
 alias ll="ls -al"
 
-function lt() { ls -ltrsa "$@" | tail; }
-
 function psgrep() { ps aux | grep -v grep | grep "$@" -i --color=auto; }
 
 function fname() { find . -iname "*$@*"; }
@@ -123,15 +117,6 @@ alias tmux='tmux -2'
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-alias hs='history | grep --color=auto'
-
 alias tm='ps -ef | grep'
 
 alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
-
-function b() {
-    cd ./$(git rev-parse --show-cdup)
-    if [ $# = 1 ]; then
-        cd $1
-    fi
-}
