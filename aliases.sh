@@ -8,11 +8,19 @@ test -f $HOME/.cygwin && . $HOME/dotfiles/env/cygwin.sh
 test -f $HOME/.home && . $HOME/dotfiles/env/home.sh
 test -f $HOME/.ubuntu && . $HOME/dotfiles/env/ubuntu.sh
 
+function commandexists {
+  command -v $1 >/dev/null 2>&1
+}
+
 function sshkeyify {
   cat ~/.ssh/id_rsa.pub | ssh $1  "mkdir ~/.ssh; cat >> ~/.ssh/authorized_keys"
 }
 
 export EDITOR='vim'
+
+if commandexists mvim; then
+  alias vim='mvim -v'
+fi
 
 # vi mode
 bindkey -v
