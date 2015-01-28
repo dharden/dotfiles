@@ -1,3 +1,5 @@
+source $HOME/dotfiles/scripts/env.sh
+
 if [ -f  $HOME/dotfiles/zsh/antigen/antigen.zsh ]; then
   source $HOME/dotfiles/zsh/antigen/antigen.zsh
   antigen use oh-my-zsh
@@ -11,5 +13,4 @@ if [ -f  $HOME/dotfiles/zsh/antigen/antigen.zsh ]; then
   bindkey '^[[B' history-substring-search-down
 fi
 
-# various aliases and such
-source $HOME/dotfiles/aliases.sh
+source $HOME/dotfiles/scripts/main.sh
