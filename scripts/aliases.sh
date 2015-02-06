@@ -7,13 +7,17 @@ alias servethis="python -c 'import SimpleHTTPServer; SimpleHTTPServer.test()'"
 
 alias please="sudo"
 
-alias ls='ls --color=auto'
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
-alias grep='grep --color=auto'
+    alias ls='ls --color=auto'
 
-alias fgrep='fgrep --color=auto'
+    alias grep='grep --color=auto'
 
-alias egrep='egrep --color=auto'
+    alias fgrep='fgrep --color=auto'
+
+    alias egrep='egrep --color=auto'
+fi
 
 alias ll="ls -al"
 

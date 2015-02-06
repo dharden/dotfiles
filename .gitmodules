@@ -4,3 +4,6 @@
 [submodule "zsh/antigen"]
 	path = zsh/antigen
 	url = https://github.com/zsh-users/antigen.git
+[submodule "zsh/base16-shell"]
+	path = zsh/base16-shell
+	url = git@github.com:chriskempson/base16-shell.git
