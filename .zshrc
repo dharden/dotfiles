@@ -13,3 +13,6 @@ if [ -f  $HOME/dotfiles/zsh/antigen/antigen.zsh ]; then
 fi
 
 source $HOME/dotfiles/scripts/main.sh
+
+zle -N colorize
+bindkey ^W colorize
