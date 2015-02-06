@@ -20,7 +20,6 @@ function parse_git_branch {
 
 export PS1="$prompt_magenta\u$prompt_cyan@$prompt_orange\h$prompt_red:$prompt_cyan\w$prompt_red|$prompt_green\$(parse_git_branch)$prompt_cyan$  $prompt_default_color"
 
-alias ls='ls --color=auto'
-
 #various alises and such
-. $HOME/dotfiles/aliases.sh
+source $HOME/dotfiles/scripts/main.sh
+bind '"\C-w":"colorize\n"'
