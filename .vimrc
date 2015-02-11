@@ -99,7 +99,7 @@ Bundle 'gmarik/vundle'
 " Colors
 Bundle 'tomasr/molokai'
 Bundle 'flazz/vim-colorschemes'
-Bundle 'godlygeek/csapprox'
+"Bundle 'godlygeek/csapprox'
 " Editor Niceties
 Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-gitgutter'
