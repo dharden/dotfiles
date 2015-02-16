@@ -14,5 +14,7 @@ fi
 
 source $HOME/dotfiles/scripts/main.sh
 
+source $HOME/dotfiles/zsh/base16-shell/base16-flat.dark.sh
+
 zle -N colorize
 bindkey ^W colorize
