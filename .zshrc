@@ -6,15 +6,25 @@ if [ -f  $HOME/dotfiles/zsh/antigen/antigen.zsh ]; then
   antigen bundle vi-mode
   antigen bundle zsh-users/zsh-syntax-highlighting
   antigen bundle zsh-users/zsh-history-substring-search
-  antigen theme ys
+  antigen theme dharden/zsh-themes themes/lazyuser
   antigen apply
   bindkey '^[[A' history-substring-search-up
   bindkey '^[[B' history-substring-search-down
+else
+  >&2 echo $fg_bold[red] "Uh oh, no antigen! You're stuck with regular, boring zsh."
 fi
 
-source $HOME/dotfiles/scripts/main.sh
+if [ -f $HOME/dotfiles/zsh/base16-shell/base16-flat.dark.sh ]; then
+  source $HOME/dotfiles/zsh/base16-shell/base16-flat.dark.sh
+else
+  >&2 echo $fg_bold[red] "Uh oh, no base-16! You're stuck with regular, boring colors."
+fi
 
-source $HOME/dotfiles/zsh/base16-shell/base16-flat.dark.sh
+if [ -f $HOME/dotfiles/scripts/main.sh ]; then
+  source $HOME/dotfiles/scripts/main.sh
+else
+  >&2 echo $fg_bold[red] "Uh oh, no main.sh! Did you move that script, you dummy?"
+fi
 
 zle -N colorize
-bindkey ^W colorize
+bindkey '^W' colorize
