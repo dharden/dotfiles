@@ -1,5 +1,11 @@
 source $HOME/dotfiles/scripts/env.sh
 
+if [ -f  $HOME/dotfiles/scripts/env.sh ]; then
+  source $HOME/dotfiles/scripts/env.sh
+else
+  >&2 echo $fg_bold[red] "Uh oh, no env.sh! Hope this isn't a weird environment."
+fi
+
 if [ -f  $HOME/dotfiles/zsh/antigen/antigen.zsh ]; then
   source $HOME/dotfiles/zsh/antigen/antigen.zsh
   antigen use oh-my-zsh
