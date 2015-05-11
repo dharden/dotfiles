@@ -114,6 +114,7 @@ Bundle 'elzr/vim-json'
 " Web Dev
 Bundle 'skammer/vim-css-color'
 Bundle 'docunext/closetag.vim'
+Bundle 'jaxbot/browserlink.vim'
 
 filetype plugin indent on
 
