@@ -121,7 +121,7 @@ filetype plugin indent on
 " Plugin config below here:
 
 " The colors, Duke, the colors
-colorscheme molokai
+" colorscheme molokai
 set t_Co=256
 " No background color
 " hi Normal ctermbg=NONE
