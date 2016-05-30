@@ -121,7 +121,7 @@ filetype plugin indent on
 " Plugin config below here:
 
 " The colors, Duke, the colors
-" colorscheme molokai
+colorscheme molokai
 set t_Co=256
 " No background color
 " hi Normal ctermbg=NONE
@@ -138,6 +138,7 @@ let g:ctrlp_prompt_mappings = {
   \ }
 
 " HARD MODE
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 " Syntax Stuff
