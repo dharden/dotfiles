@@ -6,7 +6,16 @@ else
   >&2 echo $fg_bold[red] "Uh oh, no env.sh! Hope this isn't a weird environment."
 fi
 
+
 if [ -f  $HOME/dotfiles/zsh/antigen/antigen.zsh ]; then
+  case ${TERM} in
+    xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
+      ANTIGEN_CACHE=$HOME/.antigen/init-xterm.zsh
+      ;;
+    *)
+      ANTIGEN_CACHE=$HOME/.antigen/init-other.zsh
+      ;;
+  esac
   source $HOME/dotfiles/zsh/antigen/antigen.zsh
   antigen use oh-my-zsh
   antigen bundle vi-mode
@@ -21,11 +30,9 @@ else
   >&2 echo $fg_bold[red] "Uh oh, no antigen! You're stuck with regular, boring zsh."
 fi
 
-if [ -f $HOME/dotfiles/zsh/base16-shell/base16-solarized.dark.sh ]; then
-  source $HOME/dotfiles/zsh/base16-shell/base16-solarized.dark.sh
-else
-  >&2 echo $fg_bold[red] "Uh oh, no base-16! You're stuck with regular, boring colors."
-fi
+BASE16_SHELL=$HOME/dotfiles/zsh/base16-shell
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+base16_flat
 
 if [ -f $HOME/dotfiles/scripts/main.sh ]; then
   source $HOME/dotfiles/scripts/main.sh
