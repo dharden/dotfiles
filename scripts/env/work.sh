@@ -2,6 +2,7 @@
 
 # Work Stuff
 alias zfcurl='curl -I -v -H "x-zfc-debug:on"'
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
-export PATH=/apollo/env/SDETools/bin:$PATH:/usr/local/share/npm/bin
-launchctl load ~/Library/LaunchAgents/pbcopy.plist
+
+export NVM_DIR="/Users/hardend/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export BABEL_DISABLE_CACHE=1

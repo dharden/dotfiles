@@ -15,9 +15,8 @@ set backspace=indent,eol,start    " backspace through everything in insert mode
 set listchars=""                  " Reset the listchars
 set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
 set listchars+=trail:.            " show trailing spaces as dots
-set listchars+=extends:>          " The character to show in the last column when wrap is
-                                  " off and the line continues beyond the right of the screen
-set listchars+=precedes:<         " The character to show in the last column when wrap is
+set listchars+=extends:>          " The character to show in the last column when wrapping
+set listchars+=precedes:<
 
 " Searching
 set hlsearch    " highlight matches
@@ -41,9 +40,6 @@ set autoindent
 "Always show the status line
 set laststatus=2
 set noshowmode
-
-" Prefer a slightly higher line height
-set linespace=3
 
 " Enable code folding
 set foldenable
@@ -80,10 +76,6 @@ nmap <leader>l mQviwu`Q
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
-" Map the arrow keys to be based on display lines, not physical lines
-map <Down> gj
-map <Up> gk
-
 " Clear last search
 nnoremap <CR> :noh<CR><CR>
 
@@ -99,9 +91,7 @@ Bundle 'flazz/vim-colorschemes'
 " Editor Niceties
 Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'wikitopian/hardmode'
 Bundle 'mkitt/tabline.vim'
-Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-commentary'
 Bundle 'ervandew/supertab'
@@ -130,16 +120,11 @@ set t_Co=256
 map <Leader>n :NERDTreeToggle<CR>
 
 " CtrlP Stuff - see http://statico.github.com/vim.html
-:let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 let g:ctrlp_prompt_mappings = {
   \ 'ToggleType(1)':        ['<c-f>'],
   \ 'ToggleType(-1)':       ['<c-b>']
   \ }
 
-" HARD MODE
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
-
-" Syntax Stuff
-au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+autocmd filetype crontab setlocal nobackup nowritebackup
