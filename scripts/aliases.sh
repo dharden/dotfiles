@@ -21,7 +21,7 @@ fi
 
 alias ll="ls -al"
 
-alias yolo='git commit -am "DEAL WITH IT" && git push -f origin master && open http://31.media.tumblr.com/tumblr_m1hnnbSunI1qf5re0o1_400.gif'
+alias yolo='git commit -am "DEAL WITH IT" && git push -f origin master && open http://31.media.tumblr.com/tumblr_m1hnnbSunI1qf5re0o1_400.gif && say yolo'
 
 alias tmux='tmux -2'
 
