@@ -87,6 +87,7 @@ Bundle 'gmarik/vundle'
 " Colors
 Bundle 'tomasr/molokai'
 Bundle 'flazz/vim-colorschemes'
+Plugin 'chriskempson/base16-vim'
 "Bundle 'godlygeek/csapprox'
 " Editor Niceties
 Bundle 'kien/ctrlp.vim'
@@ -114,8 +115,10 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_error_symbol = '❌'
 let g:syntastic_style_error_symbol = '⁉️'
 let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
+let g:syntastic_style_warning_symbol = '🙅'
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:syntastic_zsh_checkers = ['zsh', 'sh/shellcheck']
+let g:syntastic_bash_checkers = ['bash', 'sh/shellcheck']
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
@@ -133,8 +136,13 @@ filetype plugin indent on
 " Plugin config below here:
 
 " The colors, Duke, the colors
-colorscheme molokai
-set t_Co=256
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+else
+  colorscheme molokai
+  set t_Co=256
+endif
 " No background color
 " hi Normal ctermbg=NONE
 
