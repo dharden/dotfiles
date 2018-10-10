@@ -95,16 +95,19 @@ Bundle 'mkitt/tabline.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-commentary'
 Bundle 'ervandew/supertab'
+Bundle 'ruanyl/coverage.vim'
 " Syntax
 Bundle 'natew/ftl-vim-syntax'
 Bundle 'juvenn/mustache.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'elzr/vim-json'
+Bundle 'sbdchd/neoformat'
+autocmd BufWritePre *.js Neoformat
+
 " Web Dev
 Bundle 'skammer/vim-css-color'
 Bundle 'docunext/closetag.vim'
-Bundle 'jaxbot/browserlink.vim'
 
 filetype plugin indent on
 

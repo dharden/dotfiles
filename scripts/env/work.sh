@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Work Stuff
-alias zfcurl='curl -I -v -H "x-zfc-debug:on"'
 
-export NVM_DIR="/Users/hardend/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export BABEL_DISABLE_CACHE=1
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/versions/3.6.5/bin:$PATH"
