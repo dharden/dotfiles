@@ -54,6 +54,8 @@ main () {
     rm ~/dotfilestmp
   fi
 
+  # no motd
+  touch "$HOME/.hushlogin"
 }
 
 main
