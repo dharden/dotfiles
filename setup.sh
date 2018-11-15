@@ -6,8 +6,8 @@ TIMESTAMP="$(date +"%T")"
 
 backup() {
   backupdir=$HOME/dotfiles$TIMESTAMP
-  mkdir $backupdir
-  mv $1 $backupdir/.
+  mkdir "$backupdir"
+  mv "$1" "$backupdir"/.
 }
 
 prompt() {
@@ -15,7 +15,7 @@ prompt() {
   echo    # (optional) move to a new line
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
-    backup $1
+    backup "$1"
   fi
 } 
 
@@ -28,23 +28,23 @@ main () {
     exit 1
   fi
 
-  find . -type f | while read file; do
+  find . -type f | while read -r file; do
     dest=$HOME/$file
-    if [ -e $dest ]; then
+    if [ -e "$dest" ]; then
       echo "$dest already exists!" >> ~/dotfilestmp
     else
       echo "Symlinking $file!"
-      ln -s $(pwd)/$file $dest
+      ln -s "$(pwd)"/"$file" "$dest"
     fi
   done
 
-  if [ -e $HOME/.vim ]; then
+  if [ -e "$HOME"/.vim ]; then
     echo "$HOME/.vim already exists!" >> ~/dotfilestmp
   else
     echo "Symlinking .vim!"
-    cd ..
+    cd .. || exit
     if [[ -d .vim ]]; then
-      ln -s $DIR/.vim $HOME/.vim
+      ln -s "$DIR"/.vim "$HOME"/.vim
     fi
     cd -
   fi
