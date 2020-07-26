@@ -79,28 +79,21 @@ nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 " Clear last search
 nnoremap <CR> :noh<CR><CR>
 
-" Colors
-set term=xterm-256color
-"Bundle 'sbdchd/neoformat'
-"autocmd BufWritePre *.js Neoformat
-"
-"" Web Dev
-"Bundle 'skammer/vim-css-color'
-"Bundle 'docunext/closetag.vim'
-
 " Plugin config below here:
+autocmd BufWritePre *.js Neoformat
 
 " The colors, Duke, the colors
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 else
-"  colorscheme molokai
+  colorscheme molokai
   set t_Co=256
   let base16colorspace=256
 endif
+
 " No background color
-" hi Normal ctermbg=NONE
+hi Normal ctermbg=NONE
 
 " CtrlP Stuff - see http://statico.github.com/vim.html
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
