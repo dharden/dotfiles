@@ -79,59 +79,14 @@ nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 " Clear last search
 nnoremap <CR> :noh<CR><CR>
 
-" We Vundlin'
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
 " Colors
-Bundle 'tomasr/molokai'
-Bundle 'flazz/vim-colorschemes'
-Plugin 'chriskempson/base16-vim'
-"Bundle 'godlygeek/csapprox'
-" Editor Niceties
-Bundle 'kien/ctrlp.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'mkitt/tabline.vim'
-Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-commentary'
-Bundle 'ervandew/supertab'
-Bundle 'ruanyl/coverage.vim'
-" Syntax
-Bundle 'natew/ftl-vim-syntax'
-Bundle 'juvenn/mustache.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'mtscout6/syntastic-local-eslint.vim'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '🙅'
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-let g:syntastic_zsh_checkers = ['zsh', 'sh/shellcheck']
-let g:syntastic_bash_checkers = ['bash', 'sh/shellcheck']
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
-Bundle 'elzr/vim-json'
-Bundle 'sbdchd/neoformat'
-autocmd BufWritePre *.js Neoformat
-
-" Web Dev
-Bundle 'skammer/vim-css-color'
-Bundle 'docunext/closetag.vim'
-
-filetype plugin indent on
+set term=xterm-256color
+"Bundle 'sbdchd/neoformat'
+"autocmd BufWritePre *.js Neoformat
+"
+"" Web Dev
+"Bundle 'skammer/vim-css-color'
+"Bundle 'docunext/closetag.vim'
 
 " Plugin config below here:
 
@@ -140,14 +95,12 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 else
-  colorscheme molokai
+"  colorscheme molokai
   set t_Co=256
+  let base16colorspace=256
 endif
 " No background color
 " hi Normal ctermbg=NONE
-
-"NERDTree stuff
-map <Leader>n :NERDTreeToggle<CR>
 
 " CtrlP Stuff - see http://statico.github.com/vim.html
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'

@@ -68,3 +68,23 @@ colorize() {
   [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
   echo -e "Switching to $(basename $BASE16_SHELL .sh)!"
 }
+
+getgit() {
+  echo "$1" | sed -r 's/.*:.*\/(.*)\.git$/\1/'
+}
+
+vimpack() {
+  if [ -d .vim ]; then
+    DIR=$(getgit "$1")
+    git submodule add "$1" ".vim/pack/plugins/start/$DIR"
+  fi
+}
+
+testcolors() {
+  for i in {0..255} ; do
+    printf "\x1b[48;5;%sm%3d\e[0m " "$i" "$i"
+    if (( i == 15 )) || (( i > 15 )) && (( (i-15) % 6 == 0 )); then
+        printf "\n";
+    fi
+	done
+}
