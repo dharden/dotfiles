@@ -3,21 +3,18 @@ if commandexists mvim; then alias vim='mvim -v'; fi
 
 alias gsu='git pull --recurse-submodules && git submodule update --recursive'
 
-alias servethis="python -c 'import SimpleHTTPServer; SimpleHTTPServer.test()'"
+if commandexists python; then alias servethis="python -m SimpleHTTPServer"; fi
+if commandexists python3; then alias servethis="python3 -m http.server"; fi
 
 alias please="sudo"
 
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+alias ls='ls --color=auto'
 
-    alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 
-    alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
 
-    alias fgrep='fgrep --color=auto'
-
-    alias egrep='egrep --color=auto'
-fi
+alias egrep='egrep --color=auto'
 
 alias ll="ls -al"
 
