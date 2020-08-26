@@ -22,7 +22,7 @@ needData() {
 }
 
 getData() {
-	curl -sX GET --header "Accept: application/json" "$API$SENSORID" > "$DATAFILE"
+  curl -sX GET --header "Accept: application/json" "$API$SENSORID" > "$DATAFILE"
 }
 
 extractData() {
